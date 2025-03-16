@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- css -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* header */
+
+        header {
+            width: 100%;
+            height: 60px;
+            padding: 0 90px;
+            background: black;
+            color: beige;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        header input,
+        label,
+        .hd_link ul li a svg {
+            display: none;
+        }
+
+        /* header logo */
+        .hd_logo {
+            width: auto;
+        }
+
+        .hd_logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        /* header main link */
+        .hd_main_link {
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* header link */
+        .hd_link {
+            width: 100%;
+            color: aliceblue;
+            margin-right: 390px;
+
+        }
+
+
+
+        .hd_link ul {
+            display: flex;
+        }
+
+        .hd_link ul li {
+            padding: 10px;
+            list-style: none;
+            position: relative;
+        }
+
+        .hd_link ul li a {
+            display: block;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            color: aliceblue;
+            text-transform: capitalize;
+        }
+
+        .hd_link ul li a::after {
+            content: '';
+            top: 0;
+            left: 0;
+            display: block;
+            height: 2px;
+            width: 0%;
+            background: white;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .hd_link ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* dropdown */
+        .hd_link ul li ul {
+            position: absolute;
+            background-color: black;
+            display: none;
+            width: 100px;
+            padding: 10px 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .hd_link ul li:hover ul {
+            display: block;
+        }
+
+        .hd_link ul li ul li a:hover {
+            color: white;
+        }
+
+        /* header login button */
+
+        .hd_login {
+            width: 20%;
+            display: flex;
+            align-items: center;
+        }
+
+        .hd_login button {
+            padding: 10px 50px;
+            align-content: center;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            font-size: 18px;
+            border-radius: 13px 20px 13px 20px;
+            transition: all ease-in 300ms;
+        }
+
+        .hd_login button:hover {
+            background: white;
+            border: none;
+            color: black;
+        }
+
+        /* responsive */
+        @media(max-width:750px) {
+            .hd_main_link {
+                position: fixed;
+                top: 0;
+                right: -200px;
+                background: black;
+                height: 100vh;
+                width: 200px;
+                flex-direction: column;
+                transition: all ease-in-out 400ms;
+            }
+
+            .hd_link ul,
+            .hd_login {
+                flex-direction: column;
+            }
+
+            .hd_link {
+                margin-right: 0;
+                padding: 80px 20px;
+            }
+
+            .hd_link ul li a svg {
+                margin-right: 15px;
+                display: inline-block;
+
+            }
+
+            label {
+                display: inline-block;
+                z-index: 999;
+                position: fixed;
+                cursor: pointer;
+                right: 80px;
+            }
+
+            #check:checked~.hd_main_link {
+                right: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg></label>
+
+        <div class="hd_logo">
+            <img
+                src="https://static.vecteezy.com/system/resources/previews/019/514/650/non_2x/letter-s-logo-design-for-business-and-company-identity-with-luxury-concept-free-vector.jpg">
+        </div>
+
+        <div class="hd_main_link">
+            <div class="hd_link">
+                <ul>
+                    <li><a href="./">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-house-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+                                <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
+                            </svg>home</a></li>
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" " fill=" currentColor"
+                                class="bi bi-bag-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" />
+                            </svg>product
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg> </a>
+                        <ul class="hd_drop">
+                            <li><a href="#">men</a></li>
+                            <li><a href="#">female</a></li>
+                            <li><a href="#">kid</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-file-person-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11" />
+                            </svg>about </a></li>
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg>contact</a></li>
+                    <li><a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-substack" viewBox="0 0 16 16">
+                                <path d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z" />
+                            </svg>blog</a></li>
+
+                </ul>
+            </div>
+
+            <div class="hd_login">
+                <button>login</button>
+            </div>
+        </div>
+
+    </header>
+
+
+</body>
+
+</html>
